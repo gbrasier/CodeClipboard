@@ -3,8 +3,8 @@
 /* @import "~codemirror/theme/material"; */
 
 .CodeMirror {
-    width: 50vw;
-    min-height: 50px;
+    min-width: 50vw;
+    min-height: 80px;
     height: auto;
     overflow-y: auto;
 }
