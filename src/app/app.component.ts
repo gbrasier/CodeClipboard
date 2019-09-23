@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Clipboard } from 'src/models/clipboard';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CodeClipboard';
-  rows = [new Clipboard()];
-
+  rows: Array<Clipboard> = [new Clipboard()];
 
   addRow() {
-    console.log('in add Row');
     this.rows.push(new Clipboard());
-    console.log(this.rows.length);
+    console.log(this.rows);
   }
 
   removeRow() {
@@ -21,13 +20,5 @@ export class AppComponent {
       this.rows.pop();
     }
     console.log(this.rows);
-  }
-}
-
-export class Clipboard {
-  text: string;
-
-  constructor() {
-    this.text = null;
   }
 }
