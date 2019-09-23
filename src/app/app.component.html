@@ -336,7 +336,15 @@
   <div *ngFor="let row of rows; let i = index">
     <!-- row {{i}} -->
     <button ngxClipboard [cbContent]="row.text">Copy</button>
-    <textarea [(ngModel)]="row.text"></textarea>
+    <!-- <textarea [(ngModel)]="row.text"></textarea> -->
+    <ngx-codemirror #codeMirror
+      [(ngModel)]="row.text" 
+      [options]="{
+        lineNumbers: true,
+        theme: 'material',
+        mode: 'markdown'
+      }"
+    ></ngx-codemirror>
   </div>
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
